@@ -1,0 +1,19 @@
+// Only change code below this line
+function urlSlug(title) {
+
+  let resultArr = []
+
+  title.split(' ').map(item => 
+  {
+  if(item !== '') {
+    resultArr.push(item.toLowerCase())
+  }}
+  )
+
+  return resultArr.join('-')
+  
+}
+// Only change code above this line
+
+
+console.log(urlSlug('Winter Is    Coming'))
