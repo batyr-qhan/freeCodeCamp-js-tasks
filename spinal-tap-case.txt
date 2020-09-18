@@ -1,0 +1,6 @@
+function spinalCase(str) {
+  let arr = str.split(/(?=[A-Z, ,-_])/);
+  return arr.map(item => {return item.trim().replace(/-/g, '').replace(/_/g, '')}).filter(item => item).map(item => item.toLowerCase()).join('-')
+}
+
+console.log(spinalCase("The_Andy_Griffith_Show"))

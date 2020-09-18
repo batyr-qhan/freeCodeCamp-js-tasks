@@ -1,0 +1,25 @@
+function rot13(str) {
+
+  const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+  let result = ''
+
+  for(let i = 0; i < str.length; i++) {
+    console.log(str[i].toLowerCase() != str[i].toUpperCase())
+    if(str[i].toLowerCase() != str[i].toUpperCase()) {
+      const slicedPart = alphabet.slice(alphabet.indexOf(str[i]))
+      const remainPart = alphabet.slice(0, alphabet.indexOf(str[i]))
+      const wholeSentence = slicedPart + remainPart
+
+      for(let j = 0; j < wholeSentence.length; j++) {
+        j === 13 && (result = result + wholeSentence[j])
+      }
+    } 
+    
+    else if(str[i] === ' ') {result = result + ' '} 
+    else result = result + str[i]
+  }
+  return result;
+}
+
+rot13("SERR CVMMN!");

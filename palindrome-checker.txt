@@ -1,0 +1,20 @@
+function palindrome(str) {
+  console.log(str.toLowerCase().replace(/[^\w\s]/gi, '').replace(/ +/g, "").replace(/_/, ''))
+  let convertedStr = str.toLowerCase().replace(/[^\w\s]/gi, '').replace(/ +/g, "").replace(/_/, '')
+
+  convertedStr.split('')
+  
+  if(convertedStr.split('').length % 2 === 0) {
+  let firstPart = convertedStr.split('').slice(0, convertedStr.length / 2).join('')
+  let secondPart = convertedStr.split('').slice(convertedStr.length / 2, convertedStr.length).reverse().join('')
+
+  return (firstPart === secondPart) ? true : false 
+  } else {let firstPart = convertedStr.split('').slice(0, convertedStr.length / 2).join('')
+  let secondPart = convertedStr.split('').slice(convertedStr.length / 2 + 1, convertedStr.length).reverse().join('')
+
+  return (firstPart === secondPart) ? true : false }
+}
+
+
+
+console.log(palindrome("race car"))

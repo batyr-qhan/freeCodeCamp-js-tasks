@@ -1,0 +1,35 @@
+function translatePigLatin(str) {
+  let vowelSounds = ['a', 'e', 'i', 'o', 'u']
+
+  function findVowelIndex(string) {
+    let indexes = []
+    let arr = string.split('')
+    for(let i = 0; i < arr.length; i++) {
+      for(let j = 0; j < vowelSounds.length; j++) {
+        if(arr[i] === vowelSounds[j]) {
+          indexes.push(arr.indexOf(arr[i]))
+        }
+      }
+    }
+    indexes.filter((item, index) => (
+      indexes.indexOf(item) === index
+    ))
+    return Math.min(...indexes)
+  }
+
+  let strArr = str.split('')
+  let indexes = []
+
+  for(let i = 0; i < strArr.length; i++) {
+    for(let j = 0; j < vowelSounds.length; j++) {
+      if(strArr[0] === vowelSounds[j]) {
+        return str + 'way'
+      } 
+    }
+  }
+
+  let extracted = str.slice(0, findVowelIndex(str))
+  return str.slice(findVowelIndex(str)).concat(extracted) + 'ay'
+}
+
+console.log(translatePigLatin("eight"))
