@@ -6,8 +6,6 @@ function whatIsInAName (collection, source) {
 
   const srcKeys = Object.keys(source)
 
-
-
   // Only change code above this line
   return arr
 }
